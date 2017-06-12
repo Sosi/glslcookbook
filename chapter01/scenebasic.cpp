@@ -21,7 +21,7 @@ void SceneBasic::initScene()
     //////////////////////////////////////////////////////
 
     // Load contents of file
-    ifstream inFile( "shader/basic.vert" );
+    ifstream inFile( "../shader/basic.vert" );
     if (!inFile) {
         fprintf(stderr, "Error opening file: shader/basic.vert\n" );
         exit(1);
@@ -38,7 +38,7 @@ void SceneBasic::initScene()
       fprintf(stderr, "Error creating vertex shader.\n");
       exit(EXIT_FAILURE);
     }
-
+    
     // Load the source code into the shader object
     const GLchar* codeArray[] = {codeStr.c_str()};
     glShaderSource(vertShader, 1, codeArray, NULL);
@@ -72,7 +72,7 @@ void SceneBasic::initScene()
     //////////////////////////////////////////////////////
 
     // Load contents of file into shaderCode here
-    ifstream fragFile( "shader/basic.frag" );
+    ifstream fragFile( "../shader/basic.frag" );
     if (!fragFile) {
         fprintf(stderr, "Error opening file: shader/basic.frag\n" );
         exit(1);
