@@ -33,11 +33,11 @@ void SceneMultiTex::initScene()
 
     // Load brick texture file into channel 0
     glActiveTexture(GL_TEXTURE0);
-    TGAIO::loadTex("../media/texture/brick1.tga");
+    TGAIO::loadTex("../../media/texture/brick1.tga");
 
     // Load moss texture file into channel 1
     glActiveTexture(GL_TEXTURE1);
-    TGAIO::loadTex("../media/texture/moss.tga");
+    TGAIO::loadTex("../../media/texture/moss.tga");
 
 #ifdef __APPLE__
     prog.setUniform("BaseTex", 0);
@@ -83,11 +83,11 @@ void SceneMultiTex::compileAndLinkShader()
 {
   try {
 #ifdef __APPLE__
-    prog.compileShader("shader/multitex_41.vs");
-    prog.compileShader("shader/multitex_41.fs");
+    prog.compileShader("../shader/multitex_41.vs");
+    prog.compileShader("../shader/multitex_41.fs");
 #else
-    prog.compileShader("shader/multitex.vs");
-    prog.compileShader("shader/multitex.fs");
+    prog.compileShader("../shader/multitex.vs");
+    prog.compileShader("../shader/multitex.fs");
 #endif
     prog.link();
     prog.use();

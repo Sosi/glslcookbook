@@ -84,8 +84,8 @@ void SceneDirectional::resize(int w, int h)
 void SceneDirectional::compileAndLinkShader()
 {
 	try {
-		prog.compileShader("shader/directional.vs",GLSLShader::VERTEX);
-		prog.compileShader("shader/directional.fs",GLSLShader::FRAGMENT);
+		prog.compileShader("../shader/directional.vs",GLSLShader::VERTEX);
+		prog.compileShader("../shader/directional.fs",GLSLShader::FRAGMENT);
     	prog.link();
     	prog.use();
     } catch(GLSLProgramException & e) {

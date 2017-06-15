@@ -77,8 +77,8 @@ void SceneTwoSide::resize(int w, int h)
 void SceneTwoSide::compileAndLinkShader()
 {
 	try {
-    	prog.compileShader("shader/twoside.vert");
-    	prog.compileShader("shader/twoside.frag");
+    	prog.compileShader("../shader/twoside.vert");
+    	prog.compileShader("../shader/twoside.frag");
     	prog.link();
     	prog.use();
     } catch(GLSLProgramException & e) {

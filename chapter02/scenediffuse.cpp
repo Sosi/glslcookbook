@@ -70,8 +70,8 @@ void SceneDiffuse::resize(int w, int h)
 void SceneDiffuse::compileAndLinkShader()
 {
 	try {
-    	prog.compileShader("shader/diffuse.vert");
-    	prog.compileShader("shader/diffuse.frag");
+    	prog.compileShader("../shader/diffuse.vert");
+    	prog.compileShader("../shader/diffuse.frag");
     	prog.link();
     	prog.use();
     } catch(GLSLProgramException & e) {

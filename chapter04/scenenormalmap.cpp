@@ -25,7 +25,7 @@ void SceneNormalMap::initScene()
 
     glEnable(GL_DEPTH_TEST);
 
-    ogre = new VBOMesh("../media/bs_ears.obj",false,true,true);
+    ogre = new VBOMesh("../../media/bs_ears.obj",false,true,true);
 
     view = glm::lookAt(vec3(-1.0f,0.25f,2.0f), vec3(0.0f,0.0f,0.0f), vec3(0.0f,1.0f,0.0f));
     projection = mat4(1.0f);
@@ -36,11 +36,11 @@ void SceneNormalMap::initScene()
 
     // Load diffuse texture
     glActiveTexture(GL_TEXTURE0);
-    TGAIO::loadTex("../media/texture/ogre_diffuse.tga");
+    TGAIO::loadTex("../../media/texture/ogre_diffuse.tga");
 
     // Load normal map
     glActiveTexture(GL_TEXTURE1);
-    TGAIO::loadTex("../media/texture/ogre_normalmap.tga");
+    TGAIO::loadTex("../../media/texture/ogre_normalmap.tga");
 
 #ifdef __APPLE__
     prog.setUniform("ColorTex", 0);
@@ -96,11 +96,11 @@ void SceneNormalMap::compileAndLinkShader()
 {
   try {
 #ifdef __APPLE__
-    prog.compileShader("shader/normalmap_41.vs");
-    prog.compileShader("shader/normalmap_41.fs");
+    prog.compileShader("../shader/normalmap_41.vs");
+    prog.compileShader("../shader/normalmap_41.fs");
 #else
-    prog.compileShader("shader/normalmap.vs");
-    prog.compileShader("shader/normalmap.fs");
+    prog.compileShader("../shader/normalmap.vs");
+    prog.compileShader("../shader/normalmap.fs");
 #endif
     prog.link();
     prog.use();

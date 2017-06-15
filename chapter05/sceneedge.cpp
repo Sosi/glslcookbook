@@ -79,6 +79,10 @@ void SceneEdge::initScene()
 
     prog.setUniform("EdgeThreshold", 0.1f);
     prog.setUniform("Light.Intensity", vec3(1.0f,1.0f,1.0f) );
+    
+#ifdef __APPLE__
+    prog.setUniform("RenderTex", 0);
+#endif
 }
 
 void SceneEdge::setupFBO() {
@@ -211,8 +215,8 @@ void SceneEdge::resize(int w, int h)
 void SceneEdge::compileAndLinkShader()
 {
   try {
-    prog.compileShader("shader/edge.vs",GLSLShader::VERTEX);
-    prog.compileShader("shader/edge.fs",GLSLShader::FRAGMENT);
+    prog.compileShader("../shader/edge.vs",GLSLShader::VERTEX);
+    prog.compileShader("../shader/edge.fs",GLSLShader::FRAGMENT);
     prog.link();
     prog.use();
   } catch(GLSLProgramException &e ) {

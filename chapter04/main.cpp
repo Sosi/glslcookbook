@@ -111,12 +111,14 @@ int main(int argc, char *argv[])
 
 string parseCLArgs(int argc, char ** argv) {
 
+    /*
 	if( argc < 2 ) {
 		printHelpInfo(argv[0]);
 		exit(EXIT_FAILURE);
 	}
+    */
 
-	string recipe = argv[1];
+	string recipe = "texture";
 
 	if( recipe == "alpha-test" ) {
 		scene = new SceneAlphaTest();

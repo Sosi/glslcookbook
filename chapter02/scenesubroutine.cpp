@@ -50,12 +50,8 @@ void SceneSubroutine::render()
 
     GLuint programHandle = prog.getHandle();
 
-    GLuint adsIndex = glGetSubroutineIndex( programHandle,
-                                            GL_VERTEX_SHADER,
-                                            "phongModel" );
-    GLuint diffuseIndex = glGetSubroutineIndex(programHandle,
-                                               GL_VERTEX_SHADER,
-                                               "diffuseOnly");
+    GLuint adsIndex = glGetSubroutineIndex( programHandle, GL_VERTEX_SHADER, "phongModel" );
+    GLuint diffuseIndex = glGetSubroutineIndex(programHandle, GL_VERTEX_SHADER, "diffuseOnly");
 
     glUniformSubroutinesuiv( GL_VERTEX_SHADER, 1, &adsIndex);
     model = mat4(1.0f);
@@ -92,8 +88,8 @@ void SceneSubroutine::resize(int w, int h)
 void SceneSubroutine::compileAndLinkShader()
 {
     try {
-    	prog.compileShader("shader/subroutine.vert");
-    	prog.compileShader("shader/subroutine.frag");
+    	prog.compileShader("../shader/subroutine.vert");
+    	prog.compileShader("../shader/subroutine.frag");
     	prog.link();
     	prog.use();
     } catch(GLSLProgramException & e) {

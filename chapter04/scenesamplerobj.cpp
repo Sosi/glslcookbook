@@ -130,11 +130,11 @@ void SceneSamplerObj::compileAndLinkShader()
 {
     try {
 #ifdef __APPLE__
-      prog.compileShader("shader/texture_41.vs");
-    	prog.compileShader("shader/texture_41.fs");
+      prog.compileShader("../shader/texture_41.vs");
+    	prog.compileShader("../shader/texture_41.fs");
 #else
-    	prog.compileShader("shader/texture.vs");
-    	prog.compileShader("shader/texture.fs");
+    	prog.compileShader("../shader/texture.vs");
+    	prog.compileShader("../shader/texture.fs");
 #endif
     	prog.link();
     	prog.use();

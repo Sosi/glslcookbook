@@ -101,6 +101,8 @@ void SceneBasic_Uniform::render()
 
 	  GLuint programHandle = prog.getHandle();
     GLuint location = glGetUniformLocation(programHandle, "RotationMatrix");
+    
+    //printf("%d\n", location);
     glUniformMatrix4fv(location, 1, GL_FALSE, &rotationMatrix[0][0]);
     
     glBindVertexArray(vaoHandle);

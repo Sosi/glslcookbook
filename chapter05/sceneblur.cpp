@@ -277,8 +277,8 @@ void SceneBlur::resize(int w, int h)
 void SceneBlur::compileAndLinkShader()
 {
 	try {
-    	prog.compileShader("shader/blur.vs",GLSLShader::VERTEX);
-    	prog.compileShader("shader/blur.fs",GLSLShader::FRAGMENT);
+    	prog.compileShader("../shader/blur.vs",GLSLShader::VERTEX);
+    	prog.compileShader("../shader/blur.fs",GLSLShader::FRAGMENT);
     	prog.link();
     	prog.use();
     } catch(GLSLProgramException &e ) {

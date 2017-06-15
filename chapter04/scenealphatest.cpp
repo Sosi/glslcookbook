@@ -33,11 +33,11 @@ void SceneAlphaTest::initScene()
 
     // Load cement texture file
     glActiveTexture(GL_TEXTURE0);
-    TGAIO::loadTex("../media/texture/cement.tga");
+    TGAIO::loadTex("../../media/texture/cement.tga");
 
     // Load moss texture file
     glActiveTexture(GL_TEXTURE1);
-    TGAIO::loadTex("../media/texture/moss.tga");
+    TGAIO::loadTex("../../media/texture/moss.tga");
 
 #ifdef __APPLE__
   prog.setUniform("BaseTex", 0);
@@ -99,11 +99,11 @@ void SceneAlphaTest::compileAndLinkShader()
 {
   try {
 #ifdef __APPLE__
-    prog.compileShader("shader/alphatest_41.vs");
-    prog.compileShader("shader/alphatest_41.fs");
+    prog.compileShader("../shader/alphatest_41.vs");
+    prog.compileShader("../shader/alphatest_41.fs");
 #else
-    prog.compileShader("shader/alphatest.vs");
-    prog.compileShader("shader/alphatest.fs");
+    prog.compileShader("../shader/alphatest.vs");
+    prog.compileShader("../shader/alphatest.fs");
 #endif
     prog.link();
     prog.use();

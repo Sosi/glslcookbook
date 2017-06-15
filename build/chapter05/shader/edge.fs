@@ -3,7 +3,7 @@
 in vec3 Position;
 in vec3 Normal;
 
-layout( binding=0 ) uniform sampler2D RenderTex;
+layout( binding = 0 ) uniform sampler2D RenderTex;
 
 uniform float EdgeThreshold;
 

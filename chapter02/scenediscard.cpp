@@ -74,8 +74,8 @@ void SceneDiscard::resize(int w, int h)
 void SceneDiscard::compileAndLinkShader()
 {
 	try {
-    	prog.compileShader("shader/discard.vert");
-    	prog.compileShader("shader/discard.frag");
+    	prog.compileShader("../shader/discard.vert");
+    	prog.compileShader("../shader/discard.frag");
     	prog.link();
     	prog.use();
     } catch(GLSLProgramException & e) {

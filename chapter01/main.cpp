@@ -105,9 +105,9 @@ string parseCLArgs(int argc, char ** argv) {
 		exit(EXIT_FAILURE);
 	}
     */
-	string recipe = "basic-uniform";
+	string recipe = "basic-uniform-block";
 
-	if( recipe == "basic" ) {
+	if( recipe == "basic-debug" ) {
 		scene = new SceneBasic();
 	} else if( recipe == "basic-attrib") {
 		scene = new SceneBasic_Attrib();

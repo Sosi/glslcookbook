@@ -21,7 +21,7 @@ void SceneFlat::initScene()
 
     glEnable(GL_DEPTH_TEST);
 
-    ogre = new VBOMesh("../media/bs_ears.obj");
+    ogre = new VBOMesh("../../media/bs_ears.obj");
 
     view = glm::lookAt(vec3(0.0f,0.35f,0.85f), vec3(0.0f,-0.25f,0.0f), vec3(0.0f,1.0f,0.0f));
     projection = mat4(1.0f);
@@ -74,8 +74,8 @@ void SceneFlat::resize(int w, int h)
 void SceneFlat::compileAndLinkShader()
 {
 	try {
-    	prog.compileShader("shader/flat.vert");
-    	prog.compileShader("shader/flat.frag");
+    	prog.compileShader("../shader/flat.vert");
+    	prog.compileShader("../shader/flat.frag");
     	prog.link();
     	prog.use();
     } catch(GLSLProgramException & e) {

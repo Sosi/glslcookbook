@@ -177,8 +177,8 @@ void SceneRenderToTex::resize(int w, int h)
 void SceneRenderToTex::compileAndLinkShader()
 {
   try {
-    prog.compileShader("shader/rendertotex.vs");
-    prog.compileShader("shader/rendertotex.fs");
+    prog.compileShader("../shader/rendertotex.vs");
+    prog.compileShader("../shader/rendertotex.fs");
     prog.link();
     prog.use();
   } catch(GLSLProgramException & e) {

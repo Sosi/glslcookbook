@@ -72,8 +72,8 @@ void SceneBasic_Debug::initScene()
 void SceneBasic_Debug::compileShaderProgram()
 {
 	try {
-		prog.compileShader("shader/basic.vert" );
-		prog.compileShader("shader/basic.frag" );
+		prog.compileShader("../shader/basic.vert" );
+		prog.compileShader("../shader/basic.frag" );
 		prog.link();
 		prog.use();
 	} catch (GLSLProgramException &e) {

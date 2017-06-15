@@ -20,7 +20,7 @@ struct MaterialInfo {
   float Shininess;    // Specular shininess factor
 };
 uniform MaterialInfo Material;
-
+000
 layout( location = 0 ) out vec4 FragColor;
 
 vec3 phongModel( vec3 pos, vec3 norm ) {

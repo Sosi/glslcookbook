@@ -29,6 +29,9 @@ void SceneBasic_UniformBlock::initUniformBlockBuffer()
     GLint blockSize;
     glGetActiveUniformBlockiv(programHandle, blockIndex,
                               GL_UNIFORM_BLOCK_DATA_SIZE, &blockSize);
+    
+    printf("Block size %d \n", blockSize);
+    
     GLubyte * blockBuffer;
     blockBuffer = (GLubyte *) malloc(blockSize);
 
@@ -41,6 +44,10 @@ void SceneBasic_UniformBlock::initUniformBlockBuffer()
 
     GLint offset[4];
     glGetActiveUniformsiv(programHandle, 4, indices, GL_UNIFORM_OFFSET, offset);
+    
+    for(int i = 0; i< 4; i++)
+        printf("Block %d size %d \n", i, offset[i]);
+
 
     // Store data within the buffer at the appropriate offsets
     GLfloat outerColor[] = {0.0f, 0.0f, 0.0f, 0.0f};
@@ -126,11 +133,11 @@ void SceneBasic_UniformBlock::compile()
 {
 	try {
 #ifdef __APPLE__
-		prog.compileShader("shader/basic_uniformblock_41.vert");
-		prog.compileShader("shader/basic_uniformblock_41.frag");
+		prog.compileShader("../shader/basic_uniformblock_41.vert");
+		prog.compileShader("../shader/basic_uniformblock_41.frag");
 #else
-		prog.compileShader("shader/basic_uniformblock.vert");
-		prog.compileShader("shader/basic_uniformblock.frag");
+		prog.compileShader("../shader/basic_uniformblock.vert");
+		prog.compileShader("../shader/basic_uniformblock.frag");
 #endif
 		prog.link();
 		prog.use();

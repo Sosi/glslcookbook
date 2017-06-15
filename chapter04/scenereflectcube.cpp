@@ -32,7 +32,7 @@ void SceneReflectCube::initScene()
 
     angle = glm::radians(90.0f);
 
-    loadCubeMap("../media/texture/cubemap_night/night");
+    loadCubeMap("../../media/texture/cubemap_night/night");
 }
 
 void SceneReflectCube::loadCubeMap( const char * baseFileName )
@@ -134,11 +134,11 @@ void SceneReflectCube::compileAndLinkShader()
 {
 	try {
 #ifdef __APPLE__
-    prog.compileShader("shader/cubemap_reflect_41.vs");
-		prog.compileShader("shader/cubemap_reflect_41.fs");
+    prog.compileShader("../shader/cubemap_reflect_41.vs");
+		prog.compileShader("../shader/cubemap_reflect_41.fs");
 #else
-		prog.compileShader("shader/cubemap_reflect.vs");
-		prog.compileShader("shader/cubemap_reflect.fs");
+		prog.compileShader("../shader/cubemap_reflect.vs");
+		prog.compileShader("../shader/cubemap_reflect.fs");
 #endif
     	prog.link();
     	prog.use();

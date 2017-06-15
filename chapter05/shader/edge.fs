@@ -1,9 +1,9 @@
-#version 430
+#version 410
 
 in vec3 Position;
 in vec3 Normal;
 
-layout( binding=0 ) uniform sampler2D RenderTex;
+uniform sampler2D RenderTex;
 
 uniform float EdgeThreshold;
 

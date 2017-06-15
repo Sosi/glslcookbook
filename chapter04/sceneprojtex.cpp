@@ -43,7 +43,7 @@ void SceneProjTex::initScene()
 
     // Load texture file
     glActiveTexture(GL_TEXTURE0);
-    TGAIO::loadTex("../media/texture/flower.tga");
+    TGAIO::loadTex("../../media/texture/flower.tga");
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
 
@@ -115,11 +115,11 @@ void SceneProjTex::compileAndLinkShader()
 {
   try {
 #ifdef __APPLE__
-    prog.compileShader("shader/projtex_41.vs");
-    prog.compileShader("shader/projtex_41.fs");
+    prog.compileShader("../shader/projtex_41.vs");
+    prog.compileShader("../shader/projtex_41.fs");
 #else
-    prog.compileShader("shader/projtex.vs");
-    prog.compileShader("shader/projtex.fs");
+    prog.compileShader("../shader/projtex.vs");
+    prog.compileShader("../shader/projtex.fs");
 #endif
     prog.link();
     prog.use();
